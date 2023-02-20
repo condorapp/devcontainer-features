@@ -1,10 +1,10 @@
 #!/bin/sh
 set -e
 
-echo "Activating feature 'hello'"
+echo "Installing plugins and packages with ASDF"
 
-GREETING=${GREETING:-undefined}
-echo "The provided greeting is: $GREETING"
+PLUGINS=${PLUGINS:-undefined}
+echo "Provided plugin(s): $PLUGINS"
 
 # The 'install.sh' entrypoint script is always executed as the root user.
 #
@@ -18,12 +18,14 @@ echo "The effective dev container remoteUser's home directory is '$_REMOTE_USER_
 echo "The effective dev container containerUser is '$_CONTAINER_USER'"
 echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
 
-cat > /usr/local/bin/hello \
-<< EOF
-#!/bin/sh
-RED='\033[0;91m'
-NC='\033[0m' # No Color
-echo "\${RED}${GREETING}, \$(whoami)!\${NC}"
-EOF
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+echo ". ~/.asdf/asdf.sh" >> ~/.zshrc
+echo ". ~/.asdf/asdf.sh" >> ~/.profile
+echo ". ~/.asdf/asdf.sh" >> ~/.bashrc
 
-chmod +x /usr/local/bin/hello
+for PLUGIN in $(echo $PLUGINS | sed "s/,/ /g")
+do
+    asdf plugin add $PLUGIN
+done
+
+asdf install

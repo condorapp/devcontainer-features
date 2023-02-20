@@ -1,0 +1,20 @@
+{
+    "name": "ASDF install",
+    "id": "asdf",
+    "version": "1.0.0",
+    "description": "Install anything with ASDF from `.tool-versions`",
+    "options": {
+        "plugins": {
+            "type": "string",
+            "proposals": [
+                "erlang,elixir",
+                "elixir"
+            ],
+            "default": "erlang,elixir",
+            "description": "A comma-separated list of plugins to install. Must match versions in `.tool-versions`."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
