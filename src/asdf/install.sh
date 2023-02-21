@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 set -e
 
 echo "Installing plugins and packages with ASDF"
@@ -20,8 +20,6 @@ echo "The effective dev container containerUser's home directory is '$_CONTAINER
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 echo ". ~/.asdf/asdf.sh" >> ~/.zshrc
-echo ". ~/.asdf/asdf.sh" >> ~/.profile
-echo ". ~/.asdf/asdf.sh" >> ~/.bashrc
 
 for PLUGIN in $(echo $PLUGINS | sed "s/,/ /g")
 do
