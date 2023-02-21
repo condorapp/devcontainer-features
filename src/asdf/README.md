@@ -16,6 +16,7 @@ Install anything with ASDF from `.tool-versions`
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | plugins | A comma-separated list of plugins to install. Must match versions in `.tool-versions`. | string | erlang,elixir |
+| workspace | Full path the workspace directory containing the application's code. | string | - |
 
 
 
