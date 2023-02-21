@@ -1,7 +1,7 @@
 {
     "name": "ASDF install",
     "id": "asdf",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "description": "Install anything with ASDF from `.tool-versions`",
     "options": {
         "plugins": {
