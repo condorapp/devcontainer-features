@@ -10,6 +10,7 @@
                 "erlang,elixir",
                 "elixir"
             ],
+            "default": "erlang,elixir",
             "description": "A comma-separated list of plugins to install. Must match versions in `.tool-versions`."
         }
     },
