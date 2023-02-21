@@ -12,6 +12,14 @@
             ],
             "default": "erlang,elixir",
             "description": "A comma-separated list of plugins to install. Must match versions in `.tool-versions`."
+        },
+        "workspace": {
+            "type": "string",
+            "proposals": [
+                "/workspace/code"
+            ],
+            "default": "",
+            "description": "Full path the workspace directory containing the application's code."
         }
     },
     "installsAfter": [

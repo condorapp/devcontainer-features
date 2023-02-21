@@ -15,4 +15,4 @@ do
     su -s /bin/zsh -c ". ~/.zshrc; asdf plugin add $PLUGIN" - $_CONTAINER_USER
 done
 
-su -s /bin/zsh -c ". ~/.zshrc; asdf install" - $_CONTAINER_USER
+su -s /bin/zsh -c ". ~/.zshrc; cd $WORKSPACE; asdf install" - $_CONTAINER_USER
