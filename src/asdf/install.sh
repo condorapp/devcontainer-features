@@ -1,4 +1,5 @@
 #!/bin/zsh
+
 set -e
 
 echo "Installing plugins and packages with ASDF"
@@ -8,7 +9,7 @@ echo "Provided plugin(s): $PLUGINS"
 
 su -c "git clone https://github.com/asdf-vm/asdf.git ~/.asdf" - $_CONTAINER_USER
 su -c "echo \". ~/.asdf/asdf.sh\" >> ~/.zshrc" - $_CONTAINER_USER
-su -c "source ~/.zshrc" - $_CONTAINER_USER
+su -c ". ~/.zshrc" - $_CONTAINER_USER
 
 for PLUGIN in $(echo $PLUGINS | sed "s/,/ /g")
 do
